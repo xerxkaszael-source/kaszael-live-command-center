@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a0e1a">
+<title>KASZAEL Live Command Center</title>
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%2300d4ff'/></svg>">
+</head>
+<body>
+<div id="app">
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="brand">
+      <img class="brand-mark" src="/icons/command.svg" alt="" width="20" height="20">
+      <span class="brand-text">KASZAEL <span class="muted">LIVE COMMAND CENTER</span></span>
+    </div>
+    <nav class="tabs" id="tabs">
+      <button class="tab active" data-tab="command"><img src="/icons/command.svg" width="13" height="13" alt=""><span>Command</span></button>
+      <button class="tab" data-tab="neural"><img src="/icons/neural.svg" width="13" height="13" alt=""><span>Neural</span></button>
+      <button class="tab" data-tab="office"><img src="/icons/office.svg" width="13" height="13" alt=""><span>Office</span></button>
+      <button class="tab" data-tab="missions"><img src="/icons/mission.svg" width="13" height="13" alt=""><span>Missions</span></button>
+      <button class="tab" data-tab="agents"><img src="/icons/agent.svg" width="13" height="13" alt=""><span>Agents</span></button>
+      <button class="tab" data-tab="events"><img src="/icons/events.svg" width="13" height="13" alt=""><span>Events</span></button>
+      <button class="tab" data-tab="nine_router"><img src="/icons/router.svg" width="13" height="13" alt=""><span>9Router</span></button>
+      <button class="tab" data-tab="supabase"><img src="/icons/supabase.svg" width="13" height="13" alt=""><span>Supabase</span></button>
+      <button class="tab" data-tab="github"><img src="/icons/github.svg" width="13" height="13" alt=""><span>GitHub</span></button>
+      <button class="tab" data-tab="filesystem"><img src="/icons/filesystem.svg" width="13" height="13" alt=""><span>Files</span></button>
+      <button class="tab" data-tab="system"><img src="/icons/system.svg" width="13" height="13" alt=""><span>System</span></button>
+    </nav>
+    <div class="topbar-right">
+      <span id="ws-status" class="badge badge-stale">
+        <img id="ws-icon" src="/icons/stale.svg" width="11" height="11" alt="">
+        <span id="ws-text">Connecting</span>
+      </span>
+      <button id="cmd-btn" class="cmd-btn" title="Command Palette (/)">
+        <img src="/icons/search.svg" width="14" height="14" alt="">
+      </button>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main id="content"></main>
+
+  <!-- Command palette modal -->
+  <div id="cmd-modal" class="hidden">
+    <div class="cmd-box">
+      <input id="cmd-input" placeholder="Jump to tab, agent, role, event, project…" autocomplete="off">
+      <ul id="cmd-results"></ul>
+    </div>
+  </div>
+
+  <!-- Toast area -->
+  <div id="toasts"></div>
+</div>
+
+<script type="module" src="/character-renderer.js"></script>
+<script type="module" src="/neural-renderer.js"></script>
+<script type="module" src="/app.js"></script>
+</body>
+</html>
